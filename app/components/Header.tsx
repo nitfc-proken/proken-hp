@@ -8,7 +8,7 @@ const Header = () => {
     const [text1, setText1] = useState('');
     const [text2, setText2] = useState('');
     const [text3, setText3] = useState('');
-    const [cursor, setCursor] = useState('');
+    const [cursor, setCursor] = useState('|');
     const [complete, setComplete] = useState(false);
     useEffect(() => {
         const update = setInterval(() => {
