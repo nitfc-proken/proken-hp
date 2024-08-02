@@ -48,6 +48,7 @@ const Header = () => {
                     {text2}
                 </Heading>
                 <Heading as="h1" size="lg" color="gray">
+                    &nbsp;
                     {text3}
                 </Heading>
                 <Heading as="h1" size="lg" color="gray">
