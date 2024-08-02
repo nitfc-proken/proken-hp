@@ -1,0 +1,36 @@
+name: Check Frontend
+
+on:
+  pull_request:
+    paths:
+      - '*'
+
+jobs:
+  frontend:
+    defaults:
+      run:
+        working-directory: ./
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get npm cache directory path
+        id: npm-cache-dir-path
+        run: echo "dir=$(npm config get cache)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v2
+        id: npm-cache
+        with:
+          path: ~/.npm
+          key: Linux-npm-${{ runner.os }}-${{ hashFiles('frontend/package-lock.json') }}
+          restore-keys: Linux-npm-${{ runner.os }}-
+
+      - name: Install packages
+        run: npm install
+
+      - name: fmt
+        run: npm run fmt && git diff --exit-code
+
+      - name: lint
+        run: npm run lint
