@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fmt": "npx eslint --fix --ext .jsx,.js,.tsx,.ts ."
   },
   "dependencies": {
     "@types/three": "^0.167.1",
