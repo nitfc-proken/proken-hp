@@ -1,0 +1,98 @@
+Vercelを使っていた時のPR時の自動デプロイとDiscord通知のGithub Actions
+
+name: CI
+
+env:
+ VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+ VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on: pull_request
+
+jobs:
+ setup:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout code
+     uses: actions/checkout@v2
+
+   - name: Setup node
+     uses: actions/setup-node@v2
+     with:
+      node-version: 14
+
+ preview:
+  if: ${{ github.ref != 'refs/heads/main' }}
+  needs: setup
+  runs-on: ubuntu-latest
+  environment:
+   name: preview
+   url: ${{ steps.deploy.outputs.url }}
+  steps:
+   - uses: actions/checkout@v3
+
+   - name: Setup node
+     uses: actions/setup-node@v3
+     with:
+      node-version: 18
+      check-latest: true
+
+   - name: Install Vercel CLI
+     run: npm install --global vercel@latest
+
+   - name: Pull Vercel Environment Information
+     run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+   - name: Build Project Artifacts
+     run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+   - name: Deploy Project Artifacts to Vercel
+     id: deploy
+     run: echo "url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_OUTPUT
+
+   # VercelでPR内容をデプロイ
+   - name: Assign staging domain to deployment (if main branch)
+     if: ${{ github.ref == 'refs/heads/main' }}
+     run: vercel alias ${{ steps.deploy.outputs.url }} 2023hp.vercel.app --scope=fitcf-festival-system-team --token=${{ secrets.VERCEL_TOKEN }}
+
+   # PRのデプロイ内容をDiscordに通知
+   - name: Notify Discord
+     env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      GITHUB_ACTOR: ${{ github.actor }}
+      GITHUB_REF: ${{ github.ref }}
+     run: |
+      curl -X POST -H "Content-Type: application/json" -d '{
+        "content": "プロジェクトがデプロイされました!:partying_face: \n '${{ steps.deploy.outputs.url }}' \n コミット作成者: '${{ env.GITHUB_ACTOR }}' \n ブランチ名: '${{ env.GITHUB_REF }}'"}' $DISCORD_WEBHOOK_URL
+
+ prod:
+  if: ${{ github.ref == 'refs/heads/main' }}
+  needs: setup
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+
+   - name: Setup node
+     uses: actions/setup-node@v3
+     with:
+      node-version: 18
+      check-latest: true
+
+   - name: Install Vercel CLI
+     run: npm install --global vercel@latest
+
+   - name: Pull Vercel Environment Information
+     run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+   - name: Build Project Artifacts
+     run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+   - name: Deploy Project Artifacts to Vercel
+     run: vercel deploy --prod --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
+
+   - name: Notify Discord
+     env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      GITHUB_ACTOR: ${{ github.actor }}
+     run: |
+      curl -X POST -H "Content-Type: application/json" -d '{
+        "content": "プロジェクトがデプロイされました!!:partying_face: \n '${{ steps.deploy.outputs.url }}' \n コミット作成者: '${{ env.GITHUB_ACTOR }}'"}' $DISCORD_WEBHOOK_URL
