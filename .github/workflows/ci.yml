@@ -1,5 +1,3 @@
-Vercelを使っていた時のPR時の自動デプロイとDiscord通知のGithub Actions
-
 name: CI
 
 env:
