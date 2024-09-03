@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Image } from "@chakra-ui/react";
 import styles from "../styles/WorkCard.module.css";
 
@@ -8,20 +8,24 @@ interface WorkCardProps {
  link: string;
  image: string;
  date: string;
+ isFlipped: boolean;
+ onClickCard: () => void;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date }) => {
- const [isFlipped, setIsFlipped] = useState(false);
-
- const handleCardClick = () => {
-  setIsFlipped(!isFlipped);
+const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, isFlipped, onClickCard }) => {
+ const handleClick = () => {
+  if (isFlipped) {
+   window.open(link, "_blank");
+  } else {
+   onClickCard();
+  }
  };
 
  return (
-  <div className={`${styles.card} ${isFlipped ? styles.isFlipped : ""}`} onClick={handleCardClick}>
+  <div className={`${styles.card} ${isFlipped ? styles.isFlipped : ""}`} onClick={handleClick}>
    <div className={`${styles.cardface} ${styles.cardfaceFront}`}>
     <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" />
-    <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2}>
+    <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2} boxSizing="border-box" borderRadius="md">
      {title}
     </Box>
    </div>
