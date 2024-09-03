@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - GitHub Desktopをインストール、このリポジトリをclone
 ```bash
 #GitHub Desktopでcloneした人はgit cloneは必要なし
-$ git clone https://github.com/nitfc-festival-system-team/2023hp
+$ git clone https://github.com/nitfc-proken/proken-hp
 $ cd 2023hp
 $ npm install
 $ npm run dev
