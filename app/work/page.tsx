@@ -42,11 +42,11 @@ const WorkPage = () => {
  return (
   <>
    <Header />
-   <>
+   <Box display="flex" flexWrap="wrap" justifyContent="center" gap="20px">
     {works.map((work, index) => (
-     <WorkCard key={index} title={work.title} creator={work.creator} link={work.link} image={work.image} date={work.date} isFlipped={selectedCard === index} onClickCard={() => setSelectedCard(index)} />
+     <WorkCard key={index} title={work.title} creator={work.creator} link={work.link} image={work.image} date={work.date} isFlipped={selectedCard === index} onClickCard={() => setSelectedCard(index)} width="40%" height="250px" />
     ))}
-   </>
+   </Box>
    <Footer />
   </>
  );
