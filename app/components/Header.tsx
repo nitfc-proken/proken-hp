@@ -42,20 +42,30 @@ const Header = () => {
  return (
   <Box bg="white" p={4}>
    <Flex alignItems="center">
-    <Heading as="h1" size="lg" color="gray">
-     {text1}
-    </Heading>
-    <Heading as="h1" size="lg" color="teal.500">
-     {text2}
-    </Heading>
-    <Heading as="h1" size="lg" color="gray">
-     &nbsp;
-     {text3}
-    </Heading>
-    <Heading as="h1" size="lg" color="gray">
-     &nbsp;
-     {cursor}
-    </Heading>
+    <Flex>
+     <Link href="/">
+      <Heading as="h1" size="lg" color="gray">
+       {text1}
+      </Heading>
+     </Link>
+     <Link href="/">
+      <Heading as="h1" size="lg" color="teal.500">
+       {text2}
+      </Heading>
+     </Link>
+     <Link href="/">
+      <Heading as="h1" size="lg" color="gray">
+       &nbsp;
+       {text3}
+      </Heading>
+     </Link>
+     <Link href="/">
+      <Heading as="h1" size="lg" color="gray">
+       &nbsp;
+       {cursor}
+      </Heading>
+     </Link>
+    </Flex>
 
     <Flex ml="auto" display={{ base: "none", md: "flex" }}>
      <Link href="/">
