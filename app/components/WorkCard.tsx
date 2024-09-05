@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Image } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Image, Button } from "@chakra-ui/react";
 import styles from "../styles/WorkCard.module.css";
 
 interface WorkCardProps {
@@ -8,19 +8,20 @@ interface WorkCardProps {
  link: string;
  image: string;
  date: string;
- isFlipped: boolean;
- onClickCard: () => void;
  width?: string;
  height?: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, isFlipped, onClickCard, width = "300px", height = "200px" }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, width = "300px", height = "200px" }) => {
+ const [isFlipped, setIsFlipped] = useState(false);
+
  const handleClick = () => {
-  if (isFlipped) {
-   window.open(link, "_blank");
-  } else {
-   onClickCard();
-  }
+  setIsFlipped(!isFlipped);
+ };
+
+ const handleLinkClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  e.stopPropagation(); // カードの回転を防ぐ
+  window.open(link, "_blank");
  };
 
  return (
@@ -39,8 +40,12 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
     </Box>
    </div>
    <div className={`${styles.cardface} ${styles.cardfaceBack}`}>
-    <Box p={4}>
-     <Box display="flex" alignItems="baseline">
+    <Box p={4} textAlign="center">
+     {" "}
+     {/* 中央揃えを追加 */}
+     <Box display="flex" alignItems="baseline" justifyContent="center">
+      {" "}
+      {/* 中央揃えを追加 */}
       <Box color="gray.500" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase">
        {date}
       </Box>
@@ -49,6 +54,9 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
       {title}
      </Box>
      <Box>{creator}</Box>
+     <Button mt={4} colorScheme="teal" onClick={handleLinkClick}>
+      Visit Link
+     </Button>
     </Box>
    </div>
   </div>
