@@ -20,7 +20,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
  };
 
  const handleLinkClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-  e.stopPropagation(); // カードの回転を防ぐ
+  e.stopPropagation();
   window.open(link, "_blank");
  };
 
@@ -40,20 +40,15 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
     </Box>
    </div>
    <div className={`${styles.cardface} ${styles.cardfaceBack}`}>
-    <Box p={4} textAlign="center">
-     {" "}
-     {/* 中央揃えを追加 */}
-     <Box display="flex" alignItems="baseline" justifyContent="center">
-      {" "}
-      {/* 中央揃えを追加 */}
-      <Box color="gray.500" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase">
-       {date}
-      </Box>
+    <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" borderRadius="1vw" style={{ filter: "blur(20px)" }} />
+    <Box p={4} textAlign="center" position="absolute" top="0" left="0" width="100%" height="100%" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+     <Box color="white" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase">
+      {date}
      </Box>
-     <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
+     <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated color="white">
       {title}
      </Box>
-     <Box>{creator}</Box>
+     <Box color="white">{creator}</Box>
      <Button mt={4} colorScheme="teal" onClick={handleLinkClick}>
       Visit Link
      </Button>

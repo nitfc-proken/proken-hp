@@ -40,7 +40,7 @@
 .cardfaceBack {
     transform: rotate3d(1, 0, 0, 180deg);
     color: #262626;
-    background-color: #aaaaaa;
+    background-color: #262626;
 }
 
 .isFlipped .cardfaceBack {
