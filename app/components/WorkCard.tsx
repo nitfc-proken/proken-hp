@@ -33,8 +33,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
    }}
   >
    <div className={`${styles.cardface} ${styles.cardfaceFront}`}>
-    <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" />
-    <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2} boxSizing="border-box" borderRadius="md">
+    <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" borderRadius="1vw" />
+    <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2} borderRadius="0 0 1vw 1vw">
      {title}
     </Box>
    </div>
