@@ -5,6 +5,7 @@ import styles from "../styles/WorkCard.module.css";
 interface WorkCardProps {
  title: string;
  creator: string;
+ description: string;
  link: string;
  image: string;
  date: string;
@@ -12,7 +13,7 @@ interface WorkCardProps {
  height?: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, width = "300px", height = "200px" }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, creator, description, link, image, date, width = "300px", height = "200px" }) => {
  const [isFlipped, setIsFlipped] = useState(false);
 
  const handleClick = () => {
@@ -47,10 +48,15 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
      <Box color="white" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase">
       {date}
      </Box>
-     <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated color="white">
+     <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated color="white">
       {title}
      </Box>
-     <Box color="white">{creator}</Box>
+     <Box color="white" fontSize="medium">
+      {creator}
+     </Box>
+     <Box mt="2" color="white" fontSize="sm" textAlign="left">
+      {description}
+     </Box>
      <Button mt={4} colorScheme="teal" onClick={handleLinkClick}>
       Visit Link
      </Button>
