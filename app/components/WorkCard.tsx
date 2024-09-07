@@ -33,14 +33,16 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, link, image, date, 
     height,
    }}
   >
+   {/* 表面 */}
    <div className={`${styles.cardface} ${styles.cardfaceFront}`}>
-    <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" borderRadius="1vw" />
+    <Image src={image} alt={title} width="100%" height="100%" objectFit="cover" borderRadius="1vw" overflow="hidden" />
     <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2} borderRadius="0 0 1vw 1vw">
      {title}
     </Box>
    </div>
+   {/* 裏面 */}
    <div className={`${styles.cardface} ${styles.cardfaceBack}`}>
-    <Image src={image} alt={title} width="100%" height="100%" objectFit="contain" borderRadius="1vw" style={{ filter: "blur(20px)" }} />
+    <Image src={image} alt={title} width="100%" height="100%" objectFit="cover" borderRadius="1vw" style={{ filter: "blur(20px)" }} overflow="hidden" />
     <Box p={4} textAlign="center" position="absolute" top="0" left="0" width="100%" height="100%" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
      <Box color="white" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase">
       {date}

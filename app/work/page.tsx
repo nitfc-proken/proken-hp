@@ -1,27 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WorkCard from "../components/WorkCard";
 
 const WorkPage = () => {
- const [selectedCard, setSelectedCard] = useState<number | null>(null);
-
  const works = [
   {
-   title: "作品1",
-   creator: "制作者1",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-01-01",
+   title: "TouchStone",
+   creator: "void2610",
+   link: "https://unityroom.com/games/touchstone",
+   image: "/work/touchstone.jpg",
+   date: "2024-06-23",
   },
   {
-   title: "作品2",
-   creator: "制作者2",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-02-01",
+   title: "Sumo Survivors!",
+   creator: "void2610",
+   link: "https://unityroom.com/games/sumo_survivors",
+   image: "/work/SumoSurvivors.png",
+   date: "2024-02-11",
   },
   {
    title: "作品3",
@@ -42,7 +40,7 @@ const WorkPage = () => {
  return (
   <>
    <Header />
-   <Box display="flex" flexWrap="wrap" justifyContent="center" gap="20px">
+   <Box display="flex" flexWrap="wrap" justifyContent="center" gap="100px">
     {works.map((work, index) => (
      <WorkCard key={index} title={work.title} creator={work.creator} link={work.link} image={work.image} date={work.date} width="40%" height="250px" />
     ))}
