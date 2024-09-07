@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Image, Button } from "@chakra-ui/react";
+import { Box, Image, Button, Avatar } from "@chakra-ui/react";
 import styles from "../styles/WorkCard.module.css";
 
 interface WorkCardProps {
@@ -51,7 +51,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, description, link, 
      <Box mt="1" fontWeight="semibold" lineHeight="tight" isTruncated color="white">
       {title}
      </Box>
-     <Box color="white" fontSize="medium">
+     <Box color="white" fontSize="medium" display="flex" alignItems="center">
+      <Avatar src={`/member/${creator}.png`} size="sm" name={creator} mr={2} />
       {creator}
      </Box>
      <Box mt="2" color="white" fontSize="sm" textAlign="left">
