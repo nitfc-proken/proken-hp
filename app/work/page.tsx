@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WorkCard from "../components/WorkCard";
@@ -24,33 +25,76 @@ const WorkPage = () => {
    date: "2024-02-11",
   },
   {
-   title: "作品3",
-   creator: "制作者3",
-   description: "説明3",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-03-01",
+   title: "Simple YouTube Player",
+   creator: "void2610",
+   description: "広告なしのYouTubeプレイヤー",
+   link: "https://github.com/void2610/Simple-YouTube-Player",
+   image: "/work/syp.png",
+   date: "2023-07-17",
   },
   {
-   title: "作品4",
-   creator: "制作者4",
-   description: "説明4",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-04-01",
+   title: "送り盆",
+   creator: "void2610",
+   description: "unity1week参加作品",
+   link: "https://unityroom.com/games/okuribon",
+   image: "/work/okuribon.png",
+   date: "2024-08-17",
+  },
+  {
+   title: "Sample1",
+   creator: "johndoe",
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample1",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample2",
+   creator: "johndoe",
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample2",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample3",
+   creator: "johndoe",
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample3",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample4",
+   creator: "johndoe",
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample4",
+   date: "1970-01-01",
   },
  ];
- const isMobile = window.innerHeight > window.innerWidth;
- const width = isMobile ? "55vw" : "42vw";
- const height = isMobile ? "33vw" : "25vw";
+
+ // スマホかどうか
+ const isSp = useMediaQuery(mediaQuery.sp);
+
  return (
   <>
    <Header />
-   <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center" gap="50px" flexDirection={isMobile ? "column" : "row"}>
-    {works.map((work, index) => (
-     <WorkCard key={index} title={work.title} creator={work.creator} description={work.description} link={work.link} image={work.image} date={work.date} width={width} height={height} />
-    ))}
-   </Box>
+
+   {isSp ? (
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="30px" flexDirection="column">
+     {works.map((work, index) => (
+      <WorkCard key={index} title={work.title} creator={work.creator} description={work.description} link={work.link} image={work.image} date={work.date} width={"55vw"} height={"33vw"} />
+     ))}
+    </Flex>
+   ) : (
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="50px" flexDirection="row">
+     {works.map((work, index) => (
+      <WorkCard key={index} title={work.title} creator={work.creator} description={work.description} link={work.link} image={work.image} date={work.date} width={"36vw"} height={"20vw"} />
+     ))}
+    </Flex>
+   )}
+
    <Footer />
   </>
  );
