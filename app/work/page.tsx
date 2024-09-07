@@ -40,13 +40,15 @@ const WorkPage = () => {
    date: "2023-04-01",
   },
  ];
-
+ const isMobile = window.innerHeight > window.innerWidth;
+ const width = isMobile ? "55vw" : "42vw";
+ const height = isMobile ? "33vw" : "25vw";
  return (
   <>
    <Header />
-   <Box display="flex" flexWrap="wrap" justifyContent="center" gap="100px">
+   <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center" gap="50px" flexDirection={isMobile ? "column" : "row"}>
     {works.map((work, index) => (
-     <WorkCard key={index} title={work.title} creator={work.creator} description={work.description} link={work.link} image={work.image} date={work.date} width="40%" height="250px" />
+     <WorkCard key={index} title={work.title} creator={work.creator} description={work.description} link={work.link} image={work.image} date={work.date} width={width} height={height} />
     ))}
    </Box>
    <Footer />
