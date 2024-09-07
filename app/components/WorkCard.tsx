@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Box, Image, Button, Avatar, Text, Flex } from "@chakra-ui/react";
+import { Box, Image, Button, Avatar, AvatarGroup, Text, Flex } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/media-query";
 import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 import styles from "../styles/WorkCard.module.css";
 
 interface WorkCardProps {
  title: string;
- creator: string;
+ creators: string[];
  description: string;
  link: string;
  image: string;
@@ -15,7 +15,7 @@ interface WorkCardProps {
  height?: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, creator, description, link, image, date, width = "300px", height = "200px" }) => {
+const WorkCard: React.FC<WorkCardProps> = ({ title, creators, description, link, image, date, width = "300px", height = "200px" }) => {
  const [isFlipped, setIsFlipped] = useState(false);
 
  const handleClick = () => {
@@ -57,8 +57,15 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creator, description, link, 
       {title}
      </Text>
      <Flex color="white" fontSize="medium" alignItems="center" width="100%" height="10%" justifyContent="center" mt={isSp ? "0%" : "5%"}>
-      <Avatar src={`/member/${creator}.png`} name={creator + "_avatar"} mr={2} size={useBreakpointValue({ base: "2xs", md: "xs" })} />
-      <Text fontSize={isSp ? "10%" : "90%"}>{creator}</Text>
+      {/* 作成者が複数いる場合はアイコンを並べて表示 */}
+      <AvatarGroup size={isSp ? "2xs" : "xs"} max={3}>
+       {creators.map((creator, index) => (
+        <Flex key={index} alignItems="center">
+         <Avatar src={`/member/${creator}.png`} name={creator + "_avatar"} mr={2} size={isSp ? "2xs" : "xs"} />
+        </Flex>
+       ))}
+      </AvatarGroup>
+      <Text fontSize={isSp ? "10%" : "90%"}>{creators.join(", ")}</Text>
      </Flex>
      <Text color="white" textAlign="center" fontSize="60%" position="absolute" top="63%" w={isSp ? "80%" : "60%"}>
       {description}
