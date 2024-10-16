@@ -1,52 +1,100 @@
 "use client";
-import React, { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import React from "react";
+import { Flex } from "@chakra-ui/react";
+import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WorkCard from "../components/WorkCard";
 
 const WorkPage = () => {
- const [selectedCard, setSelectedCard] = useState<number | null>(null);
-
  const works = [
   {
-   title: "作品1",
-   creator: "制作者1",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-01-01",
+   title: "TouchStone",
+   creators: ["void2610"],
+   description: "自作ゲーム",
+   link: "https://unityroom.com/games/touchstone",
+   image: "/work/touchstone.jpg",
+   date: "2024-06-23",
   },
   {
-   title: "作品2",
-   creator: "制作者2",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-02-01",
+   title: "Sumo Survivors!",
+   creators: ["void2610"],
+   description: "自作ゲーム",
+   link: "https://unityroom.com/games/sumo_survivors",
+   image: "/work/SumoSurvivors.png",
+   date: "2024-02-11",
   },
   {
-   title: "作品3",
-   creator: "制作者3",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-03-01",
+   title: "Simple YouTube Player",
+   creators: ["void2610"],
+   description: "広告なしのYouTubeプレイヤー",
+   link: "https://github.com/void2610/Simple-YouTube-Player",
+   image: "/work/syp.png",
+   date: "2023-07-17",
   },
   {
-   title: "作品4",
-   creator: "制作者4",
-   link: "https://google.com",
-   image: "https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png",
-   date: "2023-04-01",
+   title: "送り盆",
+   creators: ["void2610", "anri"],
+   description: "unity1week参加作品",
+   link: "https://unityroom.com/games/okuribon",
+   image: "/work/okuribon.png",
+   date: "2024-08-17",
+  },
+  {
+   title: "Sample1",
+   creators: ["1johndoe", "2johndoe", "3johndoe"],
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample1",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample2",
+   creators: ["johndoe"],
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample2",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample3",
+   creators: ["johndoe"],
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample3",
+   date: "1970-01-01",
+  },
+  {
+   title: "Sample4",
+   creators: ["johndoe"],
+   description: "サンプル",
+   link: "https://example.com",
+   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample4",
+   date: "1970-01-01",
   },
  ];
+
+ // スマホかどうか
+ const isSp = useMediaQuery(mediaQuery.sp);
 
  return (
   <>
    <Header />
-   <Box display="flex" flexWrap="wrap" justifyContent="center" gap="20px">
-    {works.map((work, index) => (
-     <WorkCard key={index} title={work.title} creator={work.creator} link={work.link} image={work.image} date={work.date} width="40%" height="250px" />
-    ))}
-   </Box>
+
+   {isSp ? (
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="30px" flexDirection="column">
+     {works.map((work, index) => (
+      <WorkCard key={index} title={work.title} creators={work.creators} description={work.description} link={work.link} image={work.image} date={work.date} width={"55vw"} height={"33vw"} />
+     ))}
+    </Flex>
+   ) : (
+    <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="50px" flexDirection="row">
+     {works.map((work, index) => (
+      <WorkCard key={index} title={work.title} creators={work.creators} description={work.description} link={work.link} image={work.image} date={work.date} width={"36vw"} height={"20vw"} />
+     ))}
+    </Flex>
+   )}
+
    <Footer />
   </>
  );
