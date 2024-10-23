@@ -2,13 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## 環境構築
 
-- Node.jsを公式サイトからインストール
-- GitHub Desktopをインストール、このリポジトリをclone
+- Node.js を公式サイトからインストール
+- GitHub Desktop をインストール、このリポジトリを clone
+
 ```bash
 #GitHub Desktopでcloneした人はgit cloneは必要なし
-$ git clone https://github.com/nitfc-festival-system-team/2023hp
-$ cd 2023hp
+$ git clone https://github.com/nitfc-proken/proken-hp && cd proken-hp
 $ npm install
 $ npm run dev
 ```
+
 - http://localhost:3000/ にアクセスし、結果を確認する
