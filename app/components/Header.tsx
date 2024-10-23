@@ -16,6 +16,7 @@ import {
 	Button,
 	Stack,
 } from "@chakra-ui/react";
+import Link from "next/link";
 const Header = () => {
 	const name = "<NITFC Proken />";
 	const [cnt, setCnt] = useState(0);
@@ -53,31 +54,52 @@ const Header = () => {
 	return (
 		<Box bg="white" p={4}>
 			<Flex alignItems="center">
-				<Heading as="h1" size="lg" color="gray">
-					{text1}
-				</Heading>
-				<Heading as="h1" size="lg" color="teal.500">
-					{text2}
-				</Heading>
-				<Heading as="h1" size="lg" color="gray">
-					&nbsp;
-					{text3}
-				</Heading>
-				<Heading as="h1" size="lg" color="gray">
-					&nbsp;
-					{cursor}
-				</Heading>
+				<Flex>
+					<Link href="/">
+						<Heading as="h1" size="lg" color="gray">
+							{text1}
+						</Heading>
+					</Link>
+					<Link href="/">
+						<Heading as="h1" size="lg" color="teal.500">
+							{text2}
+						</Heading>
+					</Link>
+					<Link href="/">
+						<Heading as="h1" size="lg" color="gray">
+							&nbsp;
+							{text3}
+						</Heading>
+					</Link>
+					<Link href="/">
+						<Heading as="h1" size="lg" color="gray">
+							&nbsp;
+							{cursor}
+						</Heading>
+					</Link>
+				</Flex>
 
 				<Flex ml="auto" display={{ base: "none", md: "flex" }}>
-					<Button colorScheme="gray" variant="ghost" color="black" mr={4}>
-						Home
-					</Button>
-					<Button colorScheme="gray" variant="ghost" color="black" mr={4}>
-						About
-					</Button>
-					<Button colorScheme="gray" variant="ghost" color="black">
-						Contact
-					</Button>
+					<Link href="/">
+						<Button colorScheme="gray" variant="ghost" color="black" mr={4}>
+							Home
+						</Button>
+					</Link>
+					<Link href="/about">
+						<Button colorScheme="gray" variant="ghost" color="black" mr={4}>
+							About
+						</Button>
+					</Link>
+					<Link href="/work">
+						<Button colorScheme="gray" variant="ghost" color="black" mr={4}>
+							Work
+						</Button>
+					</Link>
+					<Link href="/contact">
+						<Button colorScheme="gray" variant="ghost" color="black">
+							Contact
+						</Button>
+					</Link>
 				</Flex>
 
 				<IconButton
@@ -98,30 +120,46 @@ const Header = () => {
 
 					<DrawerBody>
 						<Stack spacing={4}>
-							<Button
-								w="100%"
-								colorScheme="teal"
-								variant="ghost"
-								onClick={onClose}
-							>
-								Home
-							</Button>
-							<Button
-								w="100%"
-								colorScheme="teal"
-								variant="ghost"
-								onClick={onClose}
-							>
-								About
-							</Button>
-							<Button
-								w="100%"
-								colorScheme="teal"
-								variant="ghost"
-								onClick={onClose}
-							>
-								Contact
-							</Button>
+							<Link href="/">
+								<Button
+									w="100%"
+									colorScheme="teal"
+									variant="ghost"
+									onClick={onClose}
+								>
+									Home
+								</Button>
+							</Link>
+							<Link href="/about">
+								<Button
+									w="100%"
+									colorScheme="teal"
+									variant="ghost"
+									onClick={onClose}
+								>
+									About
+								</Button>
+							</Link>
+							<Link href="/work">
+								<Button
+									w="100%"
+									colorScheme="teal"
+									variant="ghost"
+									onClick={onClose}
+								>
+									Work
+								</Button>
+							</Link>
+							<Link href="/contact">
+								<Button
+									w="100%"
+									colorScheme="teal"
+									variant="ghost"
+									onClick={onClose}
+								>
+									Contact
+								</Button>
+							</Link>
 						</Stack>
 					</DrawerBody>
 				</DrawerContent>
