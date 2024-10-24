@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function TechnologyStack() {
   const techStack = [
     {
@@ -77,12 +79,12 @@ export function TechnologyStack() {
                 width: "25%",
               }}
             >
-              <img
+              <Image
                 src={tech.icon}
                 alt={tech.name}
+                width={100} // 適切な幅を指定
+                height={100} // 適切な高さを指定
                 style={{
-                  width: "10vmin",
-                  height: "10vmin",
                   margin: "1vmin",
                 }}
               />
@@ -110,12 +112,12 @@ export function TechnologyStack() {
                 width: "25%",
               }}
             >
-              <img
+              <Image
                 src={tech.icon}
                 alt={tech.name}
+                width={100}
+                height={100}
                 style={{
-                  width: "10vmin",
-                  height: "10vmin",
                   margin: "1vmin",
                 }}
               />
@@ -143,12 +145,12 @@ export function TechnologyStack() {
                 width: "25%",
               }}
             >
-              <img
+              <Image
                 src={tech.icon}
                 alt={tech.name}
+                width={100}
+                height={100}
                 style={{
-                  width: "10vmin",
-                  height: "10vmin",
                   margin: "1vmin",
                 }}
               />
