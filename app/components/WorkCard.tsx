@@ -51,7 +51,6 @@ const WorkCard: React.FC<WorkCardProps> = ({
   return (
     <div
       className={`${styles.card} ${isFlipped ? styles.isFlipped : ''}`}
-      onClick={handleClick}
       style={{
         width,
         height,
@@ -95,6 +94,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           borderRadius="1vw"
           style={{ filter: 'blur(20px)' }}
           overflow="hidden"
+          onClick={handleClick}
         />
         <Text
           color="white"
@@ -145,10 +145,10 @@ const WorkCard: React.FC<WorkCardProps> = ({
             {/* 作成者が複数いる場合はアイコンを並べて表示 */}
             <AvatarGroup size={isSp ? '2xs' : 'xs'} max={3}>
               {creators.map((creator, index) => (
-                <Flex key={index} alignItems="center">
+                <Flex key={creator} alignItems="center">
                   <Avatar
                     src={`/member/${creator}.png`}
-                    name={creator + '_avatar'}
+                    name={`${creator}_avatar`}
                     mr={2}
                     size={isSp ? '2xs' : 'xs'}
                   />
