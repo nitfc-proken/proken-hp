@@ -14,34 +14,34 @@ function Footer() {
       <div style={{ height: '10vw' }} />
       <footer
         style={{
-          backgroundColor: "#f0f0f0",
-          height: "auto",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "2.2vw",
+          backgroundColor: '#f0f0f0',
+          height: 'auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '2.2vw',
           maxHeight: maxHeight,
         }}
       >
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "right",
-            gap: "50%",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'right',
+            gap: '50%',
           }}
         >
-          <p style={{ fontSize: textSize, fontWeight: "bold" }}>
+          <p style={{ fontSize: textSize, fontWeight: 'bold' }}>
             プログラミング研究会
           </p>
-          <p style={{ fontSize: textSize, fontWeight: "bold" }}>部員募集中!</p>
+          <p style={{ fontSize: textSize, fontWeight: 'bold' }}>部員募集中!</p>
         </div>
         <div
           style={{
-            display: "flex",
-            justifyContent: "right",
-            alignItems: "center",
-            gap: "2.5vw",
+            display: 'flex',
+            justifyContent: 'right',
+            alignItems: 'center',
+            gap: '2.5vw',
           }}
         >
           <a

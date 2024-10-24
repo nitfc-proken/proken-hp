@@ -99,6 +99,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           >
             {title}
           </Box>
+        </Box>
       </div>
       {/* 裏面 */}
       <div
@@ -163,7 +164,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           >
             {/* 作成者が複数いる場合はアイコンを並べて表示 */}
             <AvatarGroup size={isSp ? '2xs' : 'xs'} max={3}>
-              {creators.map(creator => (
+              {creators.map((creator) => (
                 <Flex key={creator} alignItems="center">
                   <Avatar
                     src={`/member/${creator}.png`}

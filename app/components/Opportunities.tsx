@@ -1,39 +1,39 @@
-"use client";
+'use client';
 
-import React from "react";
-import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+import React from 'react';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 function Opportunities() {
   const images = [
     {
-      original: "/Opportunities/Op1.jpg",
-      thumbnail: "/Opportunities/Op1.jpg",
+      original: '/Opportunities/Op1.jpg',
+      thumbnail: '/Opportunities/Op1.jpg',
       description:
-        "高専プログラミングコンテスト2023競技部門に出場し、優勝しました。",
+        '高専プログラミングコンテスト2023競技部門に出場し、優勝しました。',
     },
     {
-      original: "/Opportunities/Op2.jpg",
-      thumbnail: "/Opportunities/Op2.jpg",
+      original: '/Opportunities/Op2.jpg',
+      thumbnail: '/Opportunities/Op2.jpg',
       description:
-        "プログラミング研究会では、Unityを用いてゲームを製作しています。",
+        'プログラミング研究会では、Unityを用いてゲームを製作しています。',
     },
     {
-      original: "/Opportunities/Op5.jpg",
-      thumbnail: "/Opportunities/Op5.jpg",
+      original: '/Opportunities/Op5.jpg',
+      thumbnail: '/Opportunities/Op5.jpg',
       description:
-        "高専プログラミングコンテスト2022課題部門に出場し、特別賞を受賞しました。",
+        '高専プログラミングコンテスト2022課題部門に出場し、特別賞を受賞しました。',
     },
     {
-      original: "/Opportunities/Op6.jpg",
-      thumbnail: "/Opportunities/Op6.jpg",
-      description: "高専プロコンでNICT賞を受賞し、起業家甲子園に出場しました",
+      original: '/Opportunities/Op6.jpg',
+      thumbnail: '/Opportunities/Op6.jpg',
+      description: '高専プロコンでNICT賞を受賞し、起業家甲子園に出場しました',
     },
     {
-      original: "/Opportunities/Op7.jpg",
-      thumbnail: "/Opportunities/Op7.jpg",
+      original: '/Opportunities/Op7.jpg',
+      thumbnail: '/Opportunities/Op7.jpg',
       description:
-        "ふくいソフトウェアコンペに出場し、株式会社アイジュピタ賞を受賞しました。",
+        'ふくいソフトウェアコンペに出場し、株式会社アイジュピタ賞を受賞しました。',
     },
     /*
     {
