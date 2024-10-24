@@ -1,12 +1,18 @@
+"use client";
 import { Image } from "@chakra-ui/react";
+import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 
 function Footer() {
- const imageSize = "5vw";
- const textSize = "2vw";
+ // スマホかどうか
+ const isSp = useMediaQuery(mediaQuery.sp);
+
+ const imageSize = isSp ? "5vw" : "2.5vw";
+ const textSize = isSp ? "2vw" : "1vw";
+ const maxHeight = isSp ? "80px" : "40px";
  return (
   <>
-   <div style={{ height: "20vw" }}></div>
-   <footer style={{ backgroundColor: "#7AB8BF", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "80px" }}>
+   <div style={{ height: "10vw" }}></div>
+   <footer style={{ backgroundColor: "#7AB8BF", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "2.2vw", maxHeight: maxHeight }}>
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "right", gap: "50%" }}>
      <p style={{ fontSize: textSize, fontWeight: "bold" }}>プログラミング研究会</p>
      <p style={{ fontSize: textSize, fontWeight: "bold" }}>部員募集中!</p>
