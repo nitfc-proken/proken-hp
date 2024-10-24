@@ -27,7 +27,7 @@ function Opportunities() {
     {
       original: "/Opportunities/Op6.jpg",
       thumbnail: "/Opportunities/Op6.jpg",
-      description: "起業家甲子園に出場し、賞を頂きました。",
+      description: "高専プロコンでNICT賞を受賞し、起業家甲子園に出場しました",
     },
     {
       original: "/Opportunities/Op7.jpg",
