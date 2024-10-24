@@ -4,21 +4,22 @@ function Footer() {
  return (
   <>
    <div style={{ height: "20vw" }}></div>
-   <footer style={{ backgroundColor: "gray", height: "20vw", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "5%" }}>
-    <div style={{ display: "flex", flexDirection: "column", justifyContent: "right", gap: "4vw" }}>
-     <p>プログラミング研究会</p>
-     <p>hogehoge by 部長</p>
+   <footer style={{ backgroundColor: "rgb(180,180,180)", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "70px" }}>
+    <div style={{ display: "flex", flexDirection: "column", justifyContent: "right", gap: "50%" }}>
+     <p style={{ fontSize: "90%" }}>プログラミング研究会</p>
+     <p style={{ fontSize: "90%" }}>部員募集中!</p>
     </div>
-    <div style={{ display: "flex", justifyContent: "right", gap: "4vw" }}>
+    <div style={{ display: "flex", justifyContent: "right", alignItems: "center", gap: "20px" }}>
      <a href="https://discord.com/invite/your-discord-invite-link" target="_blank" rel="noopener noreferrer">
-      <Image src="svgs/discord-icon-svgrepo-com.svg" alt="discord-logo" boxSize="10vw" />
+      <Image src="svgs/discord-icon-svgrepo-com.svg" alt="discord-logo" width="50px" height="50px" /> {/* サイズを統一 */}
      </a>
      <a href="https://github.com/nitfc-proken" target="_blank" rel="noopener noreferrer">
-      <Image src="svgs/github-mark.svg" alt="github-logo" boxSize="10vw" />
+      <Image src="svgs/github-mark.svg" alt="github-logo" width="50px" height="50px" /> {/* サイズを統一 */}
      </a>
     </div>
    </footer>
   </>
  );
 }
+
 export default Footer;
