@@ -4,7 +4,7 @@ function Footer() {
  return (
   <>
    <div style={{ height: "20vw" }}></div>
-   <footer style={{ backgroundColor: "rgb(180,180,180)", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "70px" }}>
+   <footer style={{ backgroundColor: "#7AB8BF", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "80px" }}>
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "right", gap: "50%" }}>
      <p style={{ fontSize: "90%" }}>プログラミング研究会</p>
      <p style={{ fontSize: "90%" }}>部員募集中!</p>
