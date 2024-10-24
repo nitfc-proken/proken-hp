@@ -12,7 +12,7 @@ function Footer() {
      <p style={{ fontSize: textSize }}>部員募集中!</p>
     </div>
     <div style={{ display: "flex", justifyContent: "right", alignItems: "center", gap: "2.5vw" }}>
-     <a href="https://discord.com/invite/your-discord-invite-link" target="_blank" rel="noopener noreferrer">
+     <a href="https://discord.gg/4dCXn6hyGK" target="_blank" rel="noopener noreferrer">
       <Image src="svgs/discord-icon-svgrepo-com.svg" alt="discord-logo" width={imageSize} height={imageSize} />
      </a>
      <a href="https://github.com/nitfc-proken" target="_blank" rel="noopener noreferrer">
