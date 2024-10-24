@@ -1,105 +1,114 @@
 @keyframes gradient-animation-start {
-	25% {
-		background: linear-gradient(45deg, #f43f5e, #3b82f6);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	50% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #3b82f6, #ff8c00);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	75% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #ff8c00, #3b82f6);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	100% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #3b82f6, #f43f5e);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
+  25% {
+    background: linear-gradient(45deg, #f43f5e, #3b82f6);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  50% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #3b82f6, #ff8c00);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  75% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #ff8c00, #3b82f6);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  100% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #3b82f6, #f43f5e);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
+
 @keyframes gradient-animation {
-	0% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #f43f5e, #3b82f6);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	25% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #f43f5e, #3b82f6);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	50% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #3b82f6, #ff8c00);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	75% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #ff8c00, #3b82f6);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
-	100% {
-		/* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
-		background: linear-gradient(45deg, #3b82f6, #f43f5e);
-		font-size: 4rem;
-		font-weight: bold;
-		padding-top: 3rem;
-		padding-bottom: 3rem;
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-	}
+  0% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #f43f5e, #3b82f6);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  25% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #f43f5e, #3b82f6);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  50% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #3b82f6, #ff8c00);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  75% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #ff8c00, #3b82f6);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  100% {
+    /* biome-ignore lint/suspicious/noShorthandPropertyOverrides: <explanation> */
+    background: linear-gradient(45deg, #3b82f6, #f43f5e);
+    font-size: 4rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
+
 .hello-world {
-	animation: gradient-animation-start 5s ease forwards;
+  animation: gradient-animation-start 5s ease forwards;
 }

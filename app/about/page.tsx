@@ -1,8 +1,8 @@
 "use client";
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Box, Text, VStack, Heading, Container } from "@chakra-ui/react";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 import WorkCard from "../components/WorkCard";
 
 const WorkPage = () => {
@@ -35,7 +35,7 @@ const WorkPage = () => {
       >
         {[...Array(textCount)].map((_, index) => (
           <Box
-            key={index}
+            key={Math.random().toString()}
             position="relative"
             _before={{
               content: '"プロ研部員募集中！"',

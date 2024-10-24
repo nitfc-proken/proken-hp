@@ -27,7 +27,7 @@ jobs:
           restore-keys: Linux-npm-${{ runner.os }}-
 
       - name: Install packages
-        run: npm install
+        run: npm ci
 
       - name: fmt
         run: npm run fmt && git diff --exit-code
