@@ -1,8 +1,8 @@
 import { Image } from "@chakra-ui/react";
 
 function Footer() {
- const imageSize = "4vw";
- const textSize = "2vw";
+ const imageSize = "5vw";
+ const textSize = "2.5vw";
  return (
   <>
    <div style={{ height: "20vw" }}></div>
