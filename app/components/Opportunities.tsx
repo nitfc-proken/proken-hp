@@ -22,7 +22,7 @@ function Opportunities() {
       original: "/Opportunities/Op5.jpg",
       thumbnail: "/Opportunities/Op5.jpg",
       description:
-        "高専プログラミングコンテスト2022課題部門に出場し、特別賞を頂きました。",
+        "高専プログラミングコンテスト2022課題部門に出場し、特別賞を受賞しました。",
     },
     {
       original: "/Opportunities/Op6.jpg",
@@ -33,7 +33,7 @@ function Opportunities() {
       original: "/Opportunities/Op7.jpg",
       thumbnail: "/Opportunities/Op7.jpg",
       description:
-        "ふくいソフトウェアコンペに出場し、株式会社アイジュピタ賞を頂きました。",
+        "ふくいソフトウェアコンペに出場し、株式会社アイジュピタ賞を受賞しました。",
     },
     /*
     {
