@@ -1,7 +1,7 @@
 function Introduction() {
 	return (
-		<div>
-			<div className="pl-5">
+		<div className="p-10">
+			<div className="flex justify-center items-center">
 				<h1 className="text-3xl font-bold py-3">Introduction</h1>
 			</div>
 			<div className="flex justify-center items-center">
