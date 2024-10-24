@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text, Center } from "@chakra-ui/react";
 import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -72,7 +72,12 @@ const WorkPage = () => {
  return (
   <>
    <Header />
-
+   <Center>
+    <Text style={{ fontSize: isSp ? "2.5rem" : "3rem", fontWeight: "bold", paddingTop: "3rem", paddingBottom: "2rem", backgroundImage: "linear-gradient(45deg, #f43f5e, #3b82f6)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>Works</Text>
+   </Center>
+   <Center>
+    <Text style={{ fontSize: isSp ? "1rem" : "1.75rem", fontWeight: "bold", paddingBottom: "3rem", WebkitBackgroundClip: "text", backgroundClip: "text" }}>プロ研メンバーが作成した作品を紹介しています</Text>
+   </Center>
    {isSp ? (
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="30px" flexDirection="column">
      {works.map((work, index) => (
