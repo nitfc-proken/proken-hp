@@ -1,11 +1,11 @@
-'use client';
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+"use client";
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
 
 function Three() {
   useEffect(() => {
     //canvas要素にthreejsの描画を行うための初期設定
-    const canvas = document.querySelector('#canvas-tjs') as HTMLCanvasElement;
+    const canvas = document.querySelector("#canvas-tjs") as HTMLCanvasElement;
     const scene = new THREE.Scene();
     const sizes = {
       width: innerWidth,
@@ -28,7 +28,7 @@ function Three() {
     //要素の生成と追加
     const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
     const boxMaterial = new THREE.MeshLambertMaterial({
-      color: '#2497f0',
+      color: "#2497f0",
     });
     const box = new THREE.Mesh(boxGeometry, boxMaterial);
     box.position.z = -5;
@@ -52,7 +52,7 @@ function Three() {
     };
     renderer.setAnimationLoop(animate);
     // ブラウザのリサイズ処理
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       sizes.width = window.innerWidth;
       sizes.height = window.innerHeight;
       camera.aspect = sizes.width / sizes.height;

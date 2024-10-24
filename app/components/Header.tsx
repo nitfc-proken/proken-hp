@@ -1,5 +1,5 @@
-'use client';
-import { HamburgerIcon } from '@chakra-ui/icons';
+"use client";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -14,16 +14,16 @@ import {
   IconButton,
   Stack,
   useDisclosure,
-} from '@chakra-ui/react';
-import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+} from "@chakra-ui/react";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 const Header = () => {
-  const name = '<NITFC Proken />';
+  const name = "<NITFC Proken />";
   const [cnt, setCnt] = useState(0);
-  const [text1, setText1] = useState('');
-  const [text2, setText2] = useState('');
-  const [text3, setText3] = useState('');
-  const [cursor, setCursor] = useState('|');
+  const [text1, setText1] = useState("");
+  const [text2, setText2] = useState("");
+  const [text3, setText3] = useState("");
+  const [cursor, setCursor] = useState("|");
   const [complete, setComplete] = useState(false);
   useEffect(() => {
     const update = setInterval(() => {
@@ -42,9 +42,9 @@ const Header = () => {
   useEffect(() => {
     const update = setInterval(() => {
       if (complete) {
-        setCursor(cursor === '' ? '|' : '');
+        setCursor(cursor === "" ? "|" : "");
       } else {
-        setCursor('|');
+        setCursor("|");
       }
     }, 600);
     return () => clearInterval(update);
@@ -79,7 +79,7 @@ const Header = () => {
           </Link>
         </Flex>
 
-        <Flex ml="auto" display={{ base: 'none', md: 'flex' }}>
+        <Flex ml="auto" display={{ base: "none", md: "flex" }}>
           <Link href="/">
             <Button colorScheme="gray" variant="ghost" color="black" mr={4}>
               Home
@@ -105,7 +105,7 @@ const Header = () => {
         <IconButton
           aria-label="Open Menu"
           icon={<HamburgerIcon />}
-          display={{ base: 'flex', md: 'none' }}
+          display={{ base: "flex", md: "none" }}
           onClick={onOpen}
           colorScheme="gray"
           ml="auto"
@@ -114,9 +114,9 @@ const Header = () => {
 
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent maxWidth={{ base: '50%', sm: '15em' }}>
+        <DrawerContent maxWidth={{ base: "50%", sm: "15em" }}>
           <DrawerCloseButton />
-          <DrawerHeader paddingTop={'10.5px'}>Menu</DrawerHeader>
+          <DrawerHeader paddingTop={"10.5px"}>Menu</DrawerHeader>
           <DrawerBody>
             <Stack spacing={4}>
               <Link href="/">

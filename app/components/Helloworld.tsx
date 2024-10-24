@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import './helloworld.css';
+import { motion } from "framer-motion";
+import "./helloworld.css";
 
 function Helloworld() {
   return (
@@ -12,7 +12,7 @@ function Helloworld() {
             className="hello-world mx-auto"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             drag
@@ -32,7 +32,7 @@ function Helloworld() {
           className="text-3xl font-bold py-5 sm:text-2xl md:text-3xl lg:text-4xl"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.5 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >

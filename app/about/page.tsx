@@ -1,9 +1,9 @@
-'use client';
-import { Box, Container, Heading, Text, VStack } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import WorkCard from '../components/WorkCard';
+"use client";
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import WorkCard from "../components/WorkCard";
 
 const WorkPage = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
@@ -17,10 +17,10 @@ const WorkPage = () => {
     };
 
     updateTextCount(); // 初期値の設定
-    window.addEventListener('resize', updateTextCount);
+    window.addEventListener("resize", updateTextCount);
 
     return () => {
-      window.removeEventListener('resize', updateTextCount);
+      window.removeEventListener("resize", updateTextCount);
     };
   }, []);
 
@@ -39,16 +39,16 @@ const WorkPage = () => {
             position="relative"
             _before={{
               content: '"プロ研部員募集中！"',
-              position: 'absolute',
+              position: "absolute",
               top: `${index * 150}px`,
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              fontSize: '10vw',
-              fontWeight: 'bold',
-              color: 'rgba(0, 0, 0, 0.08)',
-              whiteSpace: 'nowrap',
-              maxWidth: '100%',
-              overflow: 'hidden',
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              fontSize: "10vw",
+              fontWeight: "bold",
+              color: "rgba(0, 0, 0, 0.08)",
+              whiteSpace: "nowrap",
+              maxWidth: "100%",
+              overflow: "hidden",
             }}
           />
         ))}
