@@ -66,6 +66,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           objectFit="cover"
           borderRadius="1vw"
           overflow="hidden"
+          onClick={handleClick}
         />
         <Box
           position="absolute"
@@ -86,6 +87,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
         style={{ width: '100%', height: '100%' }}
       >
         <Image
+          className='z-10'
           src={image}
           alt={title}
           width="100%"
