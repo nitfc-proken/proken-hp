@@ -2,14 +2,14 @@ import { Image } from "@chakra-ui/react";
 
 function Footer() {
  const imageSize = "5vw";
- const textSize = "2.5vw";
+ const textSize = "2vw";
  return (
   <>
    <div style={{ height: "20vw" }}></div>
    <footer style={{ backgroundColor: "#7AB8BF", height: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "4vw", maxHeight: "80px" }}>
     <div style={{ display: "flex", flexDirection: "column", justifyContent: "right", gap: "50%" }}>
-     <p style={{ fontSize: textSize }}>プログラミング研究会</p>
-     <p style={{ fontSize: textSize }}>部員募集中!</p>
+     <p style={{ fontSize: textSize, fontWeight: "bold" }}>プログラミング研究会</p>
+     <p style={{ fontSize: textSize, fontWeight: "bold" }}>部員募集中!</p>
     </div>
     <div style={{ display: "flex", justifyContent: "right", alignItems: "center", gap: "2.5vw" }}>
      <a href="https://discord.gg/4dCXn6hyGK" target="_blank" rel="noopener noreferrer">
