@@ -1,13 +1,13 @@
+import { useState } from 'react';
 import {
+  Box,
+  Image,
+  Button,
   Avatar,
   AvatarGroup,
-  Box,
-  Button,
-  Flex,
-  Image,
   Text,
+  Flex,
 } from '@chakra-ui/react';
-import { useState } from 'react';
 import { mediaQuery, useMediaQuery } from '../hooks/useMediaQuery';
 import styles from '../styles/WorkCard.module.css';
 
@@ -51,6 +51,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
   return (
     <div
       className={`${styles.card} ${isFlipped ? styles.isFlipped : ''}`}
+      onClick={handleClick}
       style={{
         width,
         height,
@@ -66,7 +67,6 @@ const WorkCard: React.FC<WorkCardProps> = ({
           objectFit="cover"
           borderRadius="1vw"
           overflow="hidden"
-          onClick={handleClick}
         />
         <Box
           position="absolute"
@@ -78,27 +78,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           p={2}
           borderRadius="0 0 1vw 1vw"
         >
-          <Image
-            src={image}
-            alt={title}
-            width="100%"
-            height="100%"
-            objectFit="cover"
-            borderRadius="1vw"
-            overflow="hidden"
-          />
-          <Box
-            position="absolute"
-            bottom="0"
-            width="100%"
-            bg="rgba(0, 0, 0, 0.5)"
-            color="white"
-            textAlign="center"
-            p={2}
-            borderRadius="0 0 1vw 1vw"
-          >
-            {title}
-          </Box>
+          {title}
         </Box>
       </div>
       {/* 裏面 */}
@@ -164,11 +144,11 @@ const WorkCard: React.FC<WorkCardProps> = ({
           >
             {/* 作成者が複数いる場合はアイコンを並べて表示 */}
             <AvatarGroup size={isSp ? '2xs' : 'xs'} max={3}>
-              {creators.map((creator) => (
-                <Flex key={creator} alignItems="center">
+              {creators.map((creator, index) => (
+                <Flex key={index} alignItems="center">
                   <Avatar
                     src={`/member/${creator}.png`}
-                    name={`${creator}_avatar`}
+                    name={creator + '_avatar'}
                     mr={2}
                     size={isSp ? '2xs' : 'xs'}
                   />
