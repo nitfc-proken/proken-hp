@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Box,
   Image,
@@ -7,9 +7,10 @@ import {
   AvatarGroup,
   Text,
   Flex,
-} from "@chakra-ui/react";
-import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
-import styles from "../styles/WorkCard.module.css";
+} from '@chakra-ui/react';
+import { useBreakpointValue } from '@chakra-ui/media-query';
+import { mediaQuery, useMediaQuery } from '../hooks/useMediaQuery';
+import styles from '../styles/WorkCard.module.css';
 
 interface WorkCardProps {
   title: string;
@@ -29,8 +30,8 @@ const WorkCard: React.FC<WorkCardProps> = ({
   link,
   image,
   date,
-  width = "300px",
-  height = "200px",
+  width = '300px',
+  height = '200px',
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -39,10 +40,10 @@ const WorkCard: React.FC<WorkCardProps> = ({
   };
 
   const handleLinkClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     e.stopPropagation();
-    window.open(link, "_blank");
+    window.open(link, '_blank');
   };
 
   // スマホかどうか
@@ -50,7 +51,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
 
   return (
     <div
-      className={`${styles.card} ${isFlipped ? styles.isFlipped : ""}`}
+      className={`${styles.card} ${isFlipped ? styles.isFlipped : ''}`}
       onClick={handleClick}
       style={{
         width,
@@ -78,13 +79,32 @@ const WorkCard: React.FC<WorkCardProps> = ({
           p={2}
           borderRadius="0 0 1vw 1vw"
         >
-          {title}
-        </Box>
+          <Image
+            src={image}
+            alt={title}
+            width="100%"
+            height="100%"
+            objectFit="cover"
+            borderRadius="1vw"
+            overflow="hidden"
+          />
+          <Box
+            position="absolute"
+            bottom="0"
+            width="100%"
+            bg="rgba(0, 0, 0, 0.5)"
+            color="white"
+            textAlign="center"
+            p={2}
+            borderRadius="0 0 1vw 1vw"
+          >
+            {title}
+          </Box>
       </div>
       {/* 裏面 */}
       <div
         className={`${styles.cardface} ${styles.cardfaceBack}`}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
       >
         <Image
           src={image}
@@ -93,7 +113,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           height="100%"
           objectFit="cover"
           borderRadius="1vw"
-          style={{ filter: "blur(20px)" }}
+          style={{ filter: 'blur(20px)' }}
           overflow="hidden"
         />
         <Text
@@ -128,8 +148,8 @@ const WorkCard: React.FC<WorkCardProps> = ({
             textAlign="center"
             position="absolute"
             top="15%"
-            fontSize={isSp ? "200%" : "140%"}
-            mb={isSp ? "1%" : "0%"}
+            fontSize={isSp ? '200%' : '140%'}
+            mb={isSp ? '1%' : '0%'}
           >
             {title}
           </Text>
@@ -140,22 +160,22 @@ const WorkCard: React.FC<WorkCardProps> = ({
             width="100%"
             height="10%"
             justifyContent="center"
-            mt={isSp ? "0%" : "5%"}
+            mt={isSp ? '0%' : '5%'}
           >
             {/* 作成者が複数いる場合はアイコンを並べて表示 */}
-            <AvatarGroup size={isSp ? "2xs" : "xs"} max={3}>
+            <AvatarGroup size={isSp ? '2xs' : 'xs'} max={3}>
               {creators.map((creator, index) => (
                 <Flex key={index} alignItems="center">
                   <Avatar
                     src={`/member/${creator}.png`}
-                    name={creator + "_avatar"}
+                    name={creator + '_avatar'}
                     mr={2}
-                    size={isSp ? "2xs" : "xs"}
+                    size={isSp ? '2xs' : 'xs'}
                   />
                 </Flex>
               ))}
             </AvatarGroup>
-            <Text fontSize={isSp ? "10%" : "90%"}>{creators.join(", ")}</Text>
+            <Text fontSize={isSp ? '10%' : '90%'}>{creators.join(', ')}</Text>
           </Flex>
           <Text
             color="white"
@@ -163,7 +183,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
             fontSize="60%"
             position="absolute"
             top="63%"
-            w={isSp ? "80%" : "60%"}
+            w={isSp ? '80%' : '60%'}
           >
             {description}
           </Text>
@@ -173,8 +193,8 @@ const WorkCard: React.FC<WorkCardProps> = ({
             fontSize="80%"
             position="absolute"
             bottom="5%"
-            w={isSp ? "20%" : "25%"}
-            h={isSp ? "15%" : "17%"}
+            w={isSp ? '20%' : '25%'}
+            h={isSp ? '15%' : '17%'}
           >
             Visit Link
           </Button>

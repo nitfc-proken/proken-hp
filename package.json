@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fmt": "biome format --write ./"
+    "fmt": "biome format --write ./app"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

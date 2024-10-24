@@ -1,14 +1,14 @@
-"use client";
-import { Image } from "@chakra-ui/react";
-import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
+'use client';
+import { Image } from '@chakra-ui/react';
+import { mediaQuery, useMediaQuery } from '../hooks/useMediaQuery';
 
 function Footer() {
   // スマホかどうか
   const isSp = useMediaQuery(mediaQuery.sp);
 
-  const imageSize = isSp ? "5vw" : "2.5vw";
-  const textSize = isSp ? "2vw" : "1vw";
-  const maxHeight = isSp ? "80px" : "40px";
+  const imageSize = isSp ? '5vw' : '2.5vw';
+  const textSize = isSp ? '2vw' : '1vw';
+  const maxHeight = isSp ? '80px' : '40px';
   return (
     <>
       <div style={{ height: "10vw" }}></div>
