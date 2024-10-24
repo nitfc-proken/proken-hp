@@ -1,6 +1,6 @@
 import Helloworld from "./Helloworld";
 import Introduction from "./Introduction";
-import TechnologyStack from "./TechnologyStack";
+import { TechnologyStack } from "./TechnologyStack";
 function Main() {
 	return (
 		<div>
