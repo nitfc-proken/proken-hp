@@ -117,7 +117,6 @@ const Header = () => {
 				<DrawerContent maxWidth={{ base: "50%", sm: "15em" }}>
 					<DrawerCloseButton />
 					<DrawerHeader paddingTop={"10.5px"}>Menu</DrawerHeader>
-
 					<DrawerBody>
 						<Stack spacing={4}>
 							<Link href="/">
