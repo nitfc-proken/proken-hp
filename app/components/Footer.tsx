@@ -11,7 +11,7 @@ function Footer() {
   const maxHeight = isSp ? '80px' : '40px';
   return (
     <>
-      <div style={{ height: "10vw" }}></div>
+      <div style={{ height: '10vw' }} />
       <footer
         style={{
           backgroundColor: "#f0f0f0",

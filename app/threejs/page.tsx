@@ -62,7 +62,7 @@ function Three() {
     });
   }, []);
 
-  return <canvas id="canvas-tjs"></canvas>;
+  return <canvas id="canvas-tjs" />;
 }
 
 export default Three;

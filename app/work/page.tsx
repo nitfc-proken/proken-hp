@@ -1,14 +1,15 @@
 'use client';
-import React from 'react';
 import { Flex } from '@chakra-ui/react';
-import { mediaQuery, useMediaQuery } from '../hooks/useMediaQuery';
-import Header from '../components/Header';
+import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 import WorkCard from '../components/WorkCard';
+import { mediaQuery, useMediaQuery } from '../hooks/useMediaQuery';
 
 const WorkPage = () => {
   const works = [
     {
+      id: 0,
       title: 'TouchStone',
       creators: ['void2610'],
       description: '自作ゲーム',
@@ -17,6 +18,7 @@ const WorkPage = () => {
       date: '2024-06-23',
     },
     {
+      id: 1,
       title: 'Sumo Survivors!',
       creators: ['void2610'],
       description: '自作ゲーム',
@@ -25,6 +27,7 @@ const WorkPage = () => {
       date: '2024-02-11',
     },
     {
+      id: 2,
       title: 'Simple YouTube Player',
       creators: ['void2610'],
       description: '広告なしのYouTubeプレイヤー',
@@ -33,6 +36,7 @@ const WorkPage = () => {
       date: '2023-07-17',
     },
     {
+      id: 3,
       title: '送り盆',
       creators: ['void2610', 'anri'],
       description: 'unity1week参加作品',
@@ -41,6 +45,7 @@ const WorkPage = () => {
       date: '2024-08-17',
     },
     {
+      id: 4,
       title: 'Sample1',
       creators: ['1johndoe', '2johndoe', '3johndoe'],
       description: 'サンプル',
@@ -49,6 +54,7 @@ const WorkPage = () => {
       date: '1970-01-01',
     },
     {
+      id: 5,
       title: 'Sample2',
       creators: ['johndoe'],
       description: 'サンプル',
@@ -57,6 +63,7 @@ const WorkPage = () => {
       date: '1970-01-01',
     },
     {
+      id: 6,
       title: 'Sample3',
       creators: ['johndoe'],
       description: 'サンプル',
@@ -65,6 +72,7 @@ const WorkPage = () => {
       date: '1970-01-01',
     },
     {
+      id: 7,
       title: 'Sample4',
       creators: ['johndoe'],
       description: 'サンプル',
@@ -89,9 +97,9 @@ const WorkPage = () => {
           gap="30px"
           flexDirection="column"
         >
-          {works.map((work, index) => (
+          {works.map(work => (
             <WorkCard
-              key={index}
+              key={work.id}
               title={work.title}
               creators={work.creators}
               description={work.description}
@@ -111,9 +119,9 @@ const WorkPage = () => {
           gap="50px"
           flexDirection="row"
         >
-          {works.map((work, index) => (
+          {works.map(work => (
             <WorkCard
-              key={index}
+              key={work.id}
               title={work.title}
               creators={work.creators}
               description={work.description}
