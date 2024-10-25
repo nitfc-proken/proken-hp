@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text, Center } from "@chakra-ui/react";
 import { mediaQuery, useMediaQuery } from "../hooks/useMediaQuery";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -41,36 +41,28 @@ const WorkPage = () => {
    date: "2024-08-17",
   },
   {
-   title: "Sample1",
-   creators: ["1johndoe", "2johndoe", "3johndoe"],
-   description: "サンプル",
-   link: "https://example.com",
-   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample1",
-   date: "1970-01-01",
+   title: "my_portfolio",
+   creators: ["aoiacai"],
+   description: "自身のポートフォリオサイト",
+   link: "https://aoiacai.github.io/my_portfolio/",
+   image: "/work/aoiacai_portfolio.png",
+   date: "2023-6-30",
   },
   {
-   title: "Sample2",
-   creators: ["johndoe"],
-   description: "サンプル",
-   link: "https://example.com",
-   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample2",
-   date: "1970-01-01",
+   title: "Pomodoro Timer",
+   creators: ["aoiacai"],
+   description: "ポモドーロタイマー",
+   link: "https://aoiacai.github.io/pomodoro_simple/",
+   image: "/work/pom_timer.png",
+   date: "2023-06-30",
   },
   {
-   title: "Sample3",
-   creators: ["johndoe"],
-   description: "サンプル",
-   link: "https://example.com",
-   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample3",
-   date: "1970-01-01",
-  },
-  {
-   title: "Sample4",
-   creators: ["johndoe"],
-   description: "サンプル",
-   link: "https://example.com",
-   image: "https://placehold.jp/3697c7/ffffff/360x180.png?text=Sample4",
-   date: "1970-01-01",
+   title: "procon34_Open",
+   creators: ["蟹高専"],
+   description: "第34回高専プロコン競技部門で優勝したプログラム",
+   link: "https://github.com/aoiacai/procon34_Open",
+   image: "/work/procon34.png",
+   date: "2023-10-15",
   },
  ];
 
@@ -80,7 +72,12 @@ const WorkPage = () => {
  return (
   <>
    <Header />
-
+   <Center>
+    <Text style={{ fontSize: isSp ? "2.5rem" : "3rem", fontWeight: "bold", paddingTop: "3rem", paddingBottom: "2rem", backgroundImage: "linear-gradient(45deg, #f43f5e, #3b82f6)", WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>Works</Text>
+   </Center>
+   <Center>
+    <Text style={{ fontSize: isSp ? "1rem" : "1.75rem", fontWeight: "bold", paddingBottom: "3rem", WebkitBackgroundClip: "text", backgroundClip: "text" }}>プロ研メンバーが作成した作品を紹介しています</Text>
+   </Center>
    {isSp ? (
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center" gap="30px" flexDirection="column">
      {works.map((work, index) => (
