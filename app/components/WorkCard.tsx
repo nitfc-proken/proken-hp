@@ -42,17 +42,19 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creators, description, link,
    <div className={`${styles.cardface} ${styles.cardfaceFront}`}>
     <Image src={image} alt={title} width="100%" height="100%" objectFit="cover" borderRadius="1vw" overflow="hidden" />
     <Box position="absolute" bottom="0" width="100%" bg="rgba(0, 0, 0, 0.5)" color="white" textAlign="center" p={2} borderRadius="0 0 1vw 1vw">
-     {title}
+     <Text textShadow="1px 1px 2px #000000" fontWeight="bold" fontSize="xl">
+      {title}
+     </Text>
     </Box>
    </div>
    {/* 裏面 */}
    <div className={`${styles.cardface} ${styles.cardfaceBack}`} style={{ width: "100%", height: "100%" }}>
     <Image src={image} alt={title} width="100%" height="100%" objectFit="cover" borderRadius="1vw" style={{ filter: "blur(20px)" }} overflow="hidden" />
-    <Text color="white" fontWeight="normal" letterSpacing="wide" fontSize="5xs" textTransform="uppercase" position="absolute" top="0" right="0" mr={2} mt={0.5}>
+    <Text color="white" fontWeight="normal" letterSpacing="wide" fontSize="5xs" textTransform="uppercase" position="absolute" top="0" right="0" mr={2} mt={0.5} textShadow="1px 1px 2px #000000">
      {date}
     </Text>
     <Flex p={4} textAlign="center" position="absolute" top="0" left="0" width="100%" height="100%" flexDirection="column" justifyContent="center" alignItems="center">
-     <Text fontWeight="bold" color="white" textAlign="center" position="absolute" top="15%" fontSize={isSp ? "200%" : "140%"} mb={isSp ? "1%" : "0%"}>
+     <Text fontWeight="bold" color="white" textAlign="center" position="absolute" top="15%" fontSize={isSp ? "200%" : "140%"} mb={isSp ? "1%" : "0%"} textShadow="1px 1px 2px #000000">
       {title}
      </Text>
      <Flex color="white" fontSize="medium" alignItems="center" width="100%" height="10%" justifyContent="center" mt={isSp ? "0%" : "5%"}>
@@ -64,9 +66,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ title, creators, description, link,
         </Flex>
        ))}
       </AvatarGroup>
-      <Text fontSize={isSp ? "5%" : "100%"}>{creators.join(", ")}</Text>
+      <Text fontSize={isSp ? "5%" : "100%"} textShadow="1px 1px 2px #000000">
+       {creators.join(", ")}
+      </Text>
      </Flex>
-     <Text color="white" textAlign="center" fontSize="60%" position="absolute" top="63%" w={isSp ? "80%" : "60%"}>
+     <Text color="white" textAlign="center" fontSize="60%" position="absolute" top="63%" w={isSp ? "80%" : "60%"} textShadow="1px 1px 2px #000000">
       {description}
      </Text>
      <Button colorScheme="teal" onClick={handleLinkClick} fontSize="60%" position="absolute" bottom="5%" w={isSp ? "15%" : "20%"} h={isSp ? "10%" : "12%"}>
