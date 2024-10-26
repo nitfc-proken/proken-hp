@@ -1,4 +1,4 @@
-Closes #<issue No.>
+Closes # <!-- 関係するissue No.をここに記入 -->
 
 ### 変更内容
 -
