@@ -45,13 +45,21 @@ const WorkCard: React.FC<WorkCardProps> = ({
     window.open(link, "_blank");
   };
 
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === " ") {
+      handleClick();
+    }
+  };
+
   // スマホかどうか
   const isSp = useMediaQuery(mediaQuery.sp);
 
   return (
-    <div
+    <button
+      type="button"
       className={`${styles.card} ${isFlipped ? styles.isFlipped : ""}`}
       onClick={handleClick}
+      onKeyUp={handleKeyUp}
       style={{
         width,
         height,
@@ -152,11 +160,11 @@ const WorkCard: React.FC<WorkCardProps> = ({
           >
             {/* 作成者が複数いる場合はアイコンを並べて表示 */}
             <AvatarGroup size={isSp ? "2xs" : "xs"} max={3}>
-              {creators.map((creator, index) => (
-                <Flex key={index} alignItems="center">
+              {creators.map((creator) => (
+                <Flex key={creator} alignItems="center">
                   <Avatar
                     src={`/member/${creator}.png`}
-                    name={creator + "_avatar"}
+                    name={`${creator}_avatar`}
                     mr={2}
                     size={isSp ? "2xs" : "xs"}
                   />
@@ -194,7 +202,7 @@ const WorkCard: React.FC<WorkCardProps> = ({
           </Button>
         </Flex>
       </div>
-    </div>
+    </button>
   );
 };
 

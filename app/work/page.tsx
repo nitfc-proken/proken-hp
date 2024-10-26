@@ -117,9 +117,9 @@ const WorkPage = () => {
           gap="30px"
           flexDirection="column"
         >
-          {works.map((work, index) => (
+          {works.map((work) => (
             <WorkCard
-              key={index}
+              key={work.title}
               title={work.title}
               creators={work.creators}
               description={work.description}
@@ -139,9 +139,9 @@ const WorkPage = () => {
           gap="50px"
           flexDirection="row"
         >
-          {works.map((work, index) => (
+          {works.map((work) => (
             <WorkCard
-              key={index}
+              key={work.title}
               title={work.title}
               creators={work.creators}
               description={work.description}
