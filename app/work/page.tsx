@@ -64,6 +64,14 @@ const WorkPage = () => {
    image: "/work/procon34.png",
    date: "2023-10-15",
   },
+  {
+   title: "高専祭2023 HP",
+   creators: ["s555のみんな"],
+   description: "2023年度高専祭のHP",
+   link: "https://2023hp.vercel.app/",
+   image: "/work/kosenfes2023hp.png",
+   date: "2023-10-22",
+  },
  ];
 
  // スマホかどうか
