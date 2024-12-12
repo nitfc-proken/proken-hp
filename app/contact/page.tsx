@@ -14,10 +14,7 @@ export default function Home() {
             <br /> 入部や見学などはいつでも受け付けていますので、
             <br />
             気軽に
-            <Link
-              color="teal.500"
-              href="https://discord.com/invite/your-server-id"
-            >
+            <Link color="teal.500" href="https://discord.gg/4dCXn6hyGK">
               Discordサーバー
             </Link>
             へ参加してください！
