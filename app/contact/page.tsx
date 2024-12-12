@@ -1,6 +1,7 @@
+import { Link } from "@chakra-ui/react";
+import { DiscordBanner, DiscordBannerImage } from "../components/DiscordBanner";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { Link } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -19,6 +20,12 @@ export default function Home() {
             </Link>
             へ参加してください！
           </p>
+          <div style={{ margin: "75px 0", width: "100%" }}>
+            <DiscordBannerImage guildId="1232959589704663070" style="banner1" />
+          </div>
+          <div style={{ margin: "75px 0", width: "100%" }}>
+            <DiscordBanner />
+          </div>
         </div>
       </div>
       <Footer />
